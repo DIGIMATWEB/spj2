@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     public TMP_InputField contraseña;
     public Toggle terms;
 
+
+    private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos;
+
     void Start()
     {
         inicioScreen.DOAnchorPos(Vector2.zero, 0.2f);
@@ -53,6 +56,17 @@ public class UIManager : MonoBehaviour
        if( nombre.text != "" && apellido.text!= "" && pais.text != "" && email.text != "" && contraseña.text != "" && terms.isOn != false)
         {
             //   Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
+            dbname = nombre.text;
+            dbapellido = apellido.text;
+            dbpais = pais.text;
+            dbemail = email.text;
+            dbcontraseña = contraseña.text;
+           
+            if (terms==true)
+            {
+                dbterminos = "Y";
+            }
+            
             StartCoroutine("myPost");
         }
        
@@ -64,10 +78,15 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator myPost()
     {
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-        formData.Add(new MultipartFormDataSection("nombrePrueba"));
-        UnityWebRequest www = UnityWebRequest.Post("https://anotaconspacejam.com/register.php", formData);
-
+        WWWForm form = new WWWForm();
+        form.AddField("usuario", dbname);
+        form.AddField("apellido", dbapellido);
+        form.AddField("pais", dbpais);
+        form.AddField("email", dbemail);
+        form.AddField("pass", dbcontraseña);
+        form.AddField("terms", dbterminos);
+        UnityWebRequest www = UnityWebRequest.Post("https://anotaconspacejam.com/register.php", form);
+       // www.chunkedTransfer = false;////ADD THIS LINE
         yield return www.SendWebRequest();
         if (www.isNetworkError || www.isHttpError)
         {
