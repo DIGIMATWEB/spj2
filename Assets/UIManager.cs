@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Form upload complete!");
              regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
-             emailScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+             bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
         }
     }
 
