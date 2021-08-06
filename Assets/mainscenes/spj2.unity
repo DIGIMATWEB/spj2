@@ -3312,6 +3312,14 @@ MonoBehaviour:
   regiterScreen: {fileID: 1514136276}
   emailScreen: {fileID: 2000469842}
   bannerScreen: {fileID: 770971146}
+  Usr: {fileID: 1431460093}
+  Pass: {fileID: 1303779857}
+  nombre: {fileID: 2096046113}
+  apellido: {fileID: 739213817}
+  pais: {fileID: 529170035}
+  email: {fileID: 1611513119}
+  "contrase\xF1a": {fileID: 1029421716}
+  terms: {fileID: 1634796814}
 --- !u!4 &940302518
 Transform:
   m_ObjectHideFlags: 0
