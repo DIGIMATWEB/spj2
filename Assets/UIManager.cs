@@ -5,18 +5,14 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public RectTransform inicioScreen, regiterScreen, emailScreen, bannerScreen;// mainMenu, carShopMenu, powerShopMenu;
+
+    public RectTransform inicioScreen, regiterScreen, emailScreen, bannerScreen;
     void Start()
     {
         inicioScreen.DOAnchorPos(Vector2.zero, 0.2f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void loginButton()
     {
         inicioScreen.DOAnchorPos(new Vector2(-1400,0),0.25f);
