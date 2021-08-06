@@ -91,6 +91,7 @@ public class UIManager : MonoBehaviour
             }
             
             StartCoroutine("myPost");
+         //   StartCoroutine("emailPost");
            
         }
        
@@ -175,8 +176,18 @@ public class UIManager : MonoBehaviour
         }
 
     }
+    IEnumerator emailPost()
+    {
 
+        WWWForm form = new WWWForm();
+        form.AddField("email", dbUsr);
+        form.AddField("asunto", dbPass);
+        UnityWebRequest www = UnityWebRequest.Post("https://anotaconspacejam.com/test/email.php", form);
+        // www.chunkedTransfer = false;////ADD THIS LINE
 
+        yield return www.SendWebRequest();
+
+    }
         public void logValidation()
     {
         Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
