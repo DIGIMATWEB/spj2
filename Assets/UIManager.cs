@@ -5,11 +5,21 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.Networking;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public RectTransform inicioScreen, regiterScreen, emailScreen, bannerScreen;// mainMenu, carShopMenu, powerShopMenu;
-   
+
+    [Header("ObjectsVisibility")]
+    public GameObject menu1;
+    public GameObject menu2;
+    public GameObject menu3;
+    public GameObject menu4;
+
     [Header("Fields Login")]
     public TMP_InputField Usr;
     public TMP_InputField Pass;
@@ -29,7 +39,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        inicioScreen.DOAnchorPos(Vector2.zero, 0.2f);
+        menu1.SetActive(true);
+        //inicioScreen.DOAnchorPos(Vector2.zero, 0.2f);   doTween noirve con el menu
     }
 
     // Update is called once per frame
@@ -39,13 +50,17 @@ public class UIManager : MonoBehaviour
     }
     public void loginButton()
     {
-        inicioScreen.DOAnchorPos(new Vector2(-1400,0),0.25f);
-        bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        menu4.SetActive(true);
+        menu1.SetActive(false);
+        //inicioScreen.DOAnchorPos(new Vector2(-1400,0),0.25f);
+        //bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
     public void registerButton()
     {
-        inicioScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
-        regiterScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        menu2.SetActive(true);
+        menu1.SetActive(false);
+        //inicioScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
+        //regiterScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
 
     public void sendRegisterButton()
@@ -68,13 +83,16 @@ public class UIManager : MonoBehaviour
             }
             
             StartCoroutine("myPost");
+            emailSender();
         }
        
     }
     public void bannerScreenButton()
     {
-        emailScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
-        bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        menu4.SetActive(true);
+        menu3.SetActive(false);
+       // emailScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
+       // bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
     IEnumerator myPost()
     {
@@ -95,13 +113,37 @@ public class UIManager : MonoBehaviour
         else
         {
             Debug.Log("Form upload complete!");
-             regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
-             bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+            menu4.SetActive(true);
+            menu2.SetActive(false);
+            
+            //   regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
+            //  bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
         }
     }
 
         public void logValidation()
     {
         Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
+    }
+
+    public void emailSender()
+    {
+        MailMessage mail = new MailMessage();
+
+        mail.From = new MailAddress("_mainaccount@anotaconspacejam.com");
+        mail.To.Add("inghfrancisco.morales@gmail.com");
+        mail.Subject = "Test Mail";
+        mail.Body = "This is for testing SMTP mail from GMAIL";
+
+        SmtpClient smtpServer = new SmtpClient("mail.anotaconspacejam.com");
+        smtpServer.Port = 465;
+        smtpServer.Credentials = new System.Net.NetworkCredential("_mainaccount@anotaconspacejam.com", "Hu$tle-Te4m") as ICredentialsByHost;
+        smtpServer.EnableSsl = true;
+        ServicePointManager.ServerCertificateValidationCallback =
+            delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+            { return true; };
+        smtpServer.Send(mail);
+        Debug.Log("success");
+
     }
 }
