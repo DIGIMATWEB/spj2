@@ -9,6 +9,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Text;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class UIManager : MonoBehaviour
     public Toggle terms;
 
 
-    private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos;
+    private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos,dbUsr,dbPass;
 
     void Start()
     {
@@ -50,8 +52,14 @@ public class UIManager : MonoBehaviour
     }
     public void loginButton()
     {
-        menu4.SetActive(true);
-        menu1.SetActive(false);
+        if (Usr.text != "" && Pass.text != "")
+        {
+            dbUsr = Usr.text;
+            dbPass = Pass.text;
+
+            StartCoroutine("Login");
+        }
+      
         //inicioScreen.DOAnchorPos(new Vector2(-1400,0),0.25f);
         //bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
@@ -120,6 +128,54 @@ public class UIManager : MonoBehaviour
             //  bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
         }
     }
+
+    IEnumerator Login()
+    {
+
+        WWWForm form = new WWWForm();
+        form.AddField("name", dbUsr);
+        form.AddField("password", dbPass);
+        UnityWebRequest www = UnityWebRequest.Post("https://anotaconspacejam.com/test/login.php", form);
+        // www.chunkedTransfer = false;////ADD THIS LINE
+       
+        yield return www.SendWebRequest();
+
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+
+            Debug.Log("Form upload complete!");
+            Debug.Log("POST successful!");
+            StringBuilder sb = new StringBuilder();
+            foreach (System.Collections.Generic.KeyValuePair<string, string> dict in www.GetResponseHeaders())
+            {
+                sb.Append(dict.Key).Append(": \t[").Append(dict.Value).Append("]\n");
+            }
+
+            // Print Headers
+            Debug.Log("  Header " + sb.ToString());
+
+            // Print Body
+            Debug.Log("  body "+www.downloadHandler.text);
+           if(www.downloadHandler.text.Contains("NO Existe"))
+            {
+             
+
+            }
+            else
+            {
+                menu4.SetActive(true);
+                menu1.SetActive(false);
+            }
+
+
+        }
+
+    }
+
 
         public void logValidation()
     {
