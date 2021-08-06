@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Networking;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -52,23 +53,35 @@ public class UIManager : MonoBehaviour
        if( nombre.text != "" && apellido.text!= "" && pais.text != "" && email.text != "" && contraseña.text != "" && terms.isOn != false)
         {
             //   Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
-
+            StartCoroutine("myPost");
         }
-        else
-        {
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), "llena los campos");
-        }
-        // regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
-        // emailScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+       
     }
     public void bannerScreenButton()
     {
         emailScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
         bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
+    IEnumerator myPost()
+    {
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection("nombrePrueba"));
+        UnityWebRequest www = UnityWebRequest.Post("https://anotaconspacejam.com/register.php", formData);
 
+        yield return www.SendWebRequest();
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+             regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
+             emailScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
+        }
+    }
 
-    public void logValidation()
+        public void logValidation()
     {
         Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
     }
