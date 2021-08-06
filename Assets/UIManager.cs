@@ -49,9 +49,14 @@ public class UIManager : MonoBehaviour
        // logValidation();
       
 
-       if( nombre.text != "")
+       if( nombre.text != "" && apellido.text!= "" && pais.text != "" && email.text != "" && contraseña.text != "" && terms.isOn != false)
         {
-            Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
+            //   Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
+
+        }
+        else
+        {
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), "llena los campos");
         }
         // regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
         // emailScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
