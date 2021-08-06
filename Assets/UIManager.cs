@@ -19,23 +19,23 @@ public class UIManager : MonoBehaviour
     }
     public void loginButton()
     {
-        inicioScreen.DOAnchorPos(new Vector2(-800,0),0.25f);
+        inicioScreen.DOAnchorPos(new Vector2(-1400,0),0.25f);
         bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
     public void registerButton()
     {
-        inicioScreen.DOAnchorPos(new Vector2(-800, 0), 0.25f);
+        inicioScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
         regiterScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
 
     public void sendRegisterButton()
     {
-        regiterScreen.DOAnchorPos(new Vector2(-800, 0), 0.25f);
+        regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
         emailScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
     public void bannerScreenButton()
     {
-        emailScreen.DOAnchorPos(new Vector2(-800, 0), 0.25f);
+        emailScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
         bannerScreen.DOAnchorPos(new Vector2(0, 0), 0.25f);
     }
 }
