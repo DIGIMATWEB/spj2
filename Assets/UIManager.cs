@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
             }
             
             StartCoroutine("myPost");
-            emailSender();
+           
         }
        
     }
@@ -126,24 +126,5 @@ public class UIManager : MonoBehaviour
         Debug.Log("Fields void   " + nombre.text + " | " + apellido.text + " | " + pais.text + " | " + email.text + " | " + contraseña.text + " | " + terms.isOn);
     }
 
-    public void emailSender()
-    {
-        MailMessage mail = new MailMessage();
 
-        mail.From = new MailAddress("_mainaccount@anotaconspacejam.com");
-        mail.To.Add("inghfrancisco.morales@gmail.com");
-        mail.Subject = "Test Mail";
-        mail.Body = "This is for testing SMTP mail from GMAIL";
-
-        SmtpClient smtpServer = new SmtpClient("mail.anotaconspacejam.com");
-        smtpServer.Port = 465;
-        smtpServer.Credentials = new System.Net.NetworkCredential("_mainaccount@anotaconspacejam.com", "Hu$tle-Te4m") as ICredentialsByHost;
-        smtpServer.EnableSsl = true;
-        ServicePointManager.ServerCertificateValidationCallback =
-            delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
-            { return true; };
-        smtpServer.Send(mail);
-        Debug.Log("success");
-
-    }
 }
