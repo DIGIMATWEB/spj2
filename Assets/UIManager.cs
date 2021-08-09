@@ -11,6 +11,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Text;
+using UnityEngine.Video;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -35,9 +36,18 @@ public class UIManager : MonoBehaviour
     public TMP_InputField email;
     public TMP_InputField contraseña;
     public Toggle terms;
+    [Header("VideoPlayerComponent")]
 
+    public RawImage imageVideoPlayer;
+    public VideoPlayer videoplayerC;
+    public GameObject videoRect;
+
+    [Header("Instrucciones")]
+
+    public GameObject instructionsBanner;
 
     private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos,dbUsr,dbPass;
+    private int countInstructionsBanner=0;
 
     void Start()
     {
@@ -194,4 +204,32 @@ public class UIManager : MonoBehaviour
     }
 
 
+
+
+    public void hideVideoPlayerComponent()
+    {
+        countInstructionsBanner = countInstructionsBanner+1;
+        if(countInstructionsBanner>=2)
+        {
+            countInstructionsBanner = 0;
+        }
+        if (countInstructionsBanner == 0)
+        {
+           
+            //videoRect.SetActive(true);
+           // videoplayerC.Prepare();
+            //videoplayerC.Play();
+            //instructionsBanner.SetActive(false);
+            Debug.Log("0");
+        }else if(countInstructionsBanner == 1)
+        {
+            //imageVideoPlayer.texture = videoplayerC.texture;
+            //videoplayerC.Stop();
+            //videoRect.SetActive(false);
+           // instructionsBanner.SetActive(true);
+            Debug.Log("1");
+        }
+
+     
+    }
 }
