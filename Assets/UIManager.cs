@@ -15,13 +15,15 @@ using UnityEngine.Video;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public RectTransform inicioScreen, regiterScreen, emailScreen, bannerScreen;// mainMenu, carShopMenu, powerShopMenu;
+    public RectTransform inicioScreen, regiterScreen, emailScreen, bannerScreen;// mainMenu, carShopMenu, powerShopMenu; esto era para el twin que no sirve en webgl
 
     [Header("ObjectsVisibility")]
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
     public GameObject menu4;
+    public GameObject menu5;
+
 
     [Header("Fields Login")]
     public TMP_InputField Usr;
@@ -36,18 +38,25 @@ public class UIManager : MonoBehaviour
     public TMP_InputField email;
     public TMP_InputField contraseña;
     public Toggle terms;
-    [Header("VideoPlayerComponent")]
+    //[Header("VideoPlayerComponent")]
 
-    public RawImage imageVideoPlayer;
-    public VideoPlayer videoplayerC;
-    public GameObject videoRect;
+   // public RawImage imageVideoPlayer;
+    //public VideoPlayer videoplayerC;
+    //public GameObject videoRect;
 
-    [Header("Instrucciones")]
+    [Header("Home")]
+    public Toggle onoff;
+    public GameObject VideoPlayer1;
+    public GameObject Instrucciones;
+    public GameObject practica;
+    public GameObject juego;
+    public GameObject topPlayers;
+    //public GameObject DisfrutaLaPelicula;
 
-    public GameObject instructionsBanner;
+    // public GameObject instructionsBanner;
 
     private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos,dbUsr,dbPass;
-    private int countInstructionsBanner=0;
+    private bool isOn;
 
     void Start()
     {
@@ -205,31 +214,40 @@ public class UIManager : MonoBehaviour
 
 
 
-
-    public void hideVideoPlayerComponent()
+    public void instrucciones()
     {
-        countInstructionsBanner = countInstructionsBanner+1;
-        if(countInstructionsBanner>=2)
-        {
-            countInstructionsBanner = 0;
-        }
-        if (countInstructionsBanner == 0)
-        {
-           
-            //videoRect.SetActive(true);
-           // videoplayerC.Prepare();
-            //videoplayerC.Play();
-            //instructionsBanner.SetActive(false);
-            Debug.Log("0");
-        }else if(countInstructionsBanner == 1)
-        {
-            //imageVideoPlayer.texture = videoplayerC.texture;
-            //videoplayerC.Stop();
-            //videoRect.SetActive(false);
-           // instructionsBanner.SetActive(true);
-            Debug.Log("1");
-        }
 
-     
+        isOn = onoff.isOn;
+        Debug.Log(isOn);
+        if (isOn)
+        {
+            Instrucciones.SetActive(true);
+            VideoPlayer1.GetComponentInChildren<VideoPlayer>().Stop();
+            VideoPlayer1.SetActive(false);
+            isOn = false;
+
+        }
+        else
+        {
+            Instrucciones.SetActive(false);
+            VideoPlayer1.SetActive(true);
+            VideoPlayer1.GetComponentInChildren<VideoPlayer>().Play();
+            isOn = true;
+        }
     }
+
+    public void enjoytheMovie()
+    {
+        menu4.SetActive(true);
+        menu5.SetActive(false);
+    }
+
+    public void topmyPlayers()
+    {
+        VideoPlayer1.GetComponentInChildren<VideoPlayer>().Stop();
+        VideoPlayer1.SetActive(false);
+        topPlayers.SetActive(true);
+    }
+
+  
 }
