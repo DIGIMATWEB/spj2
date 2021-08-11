@@ -525,19 +525,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &330448131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4585541051525772017, guid: 243a903b0fd3bca48a33407c5f1906aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4585541051751075826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &330448133 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4585541051525772023, guid: 243a903b0fd3bca48a33407c5f1906aa,
     type: 3}
   m_PrefabInstance: {fileID: 4585541051751075826}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330448131}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
@@ -603,82 +597,6 @@ VideoPlayer:
     type: 3}
   m_PrefabInstance: {fileID: 4585541051751075826}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &815980285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4585541052013400335, guid: 243a903b0fd3bca48a33407c5f1906aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4585541051751075826}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &815980287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815980285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 815980288}
-  toggleTransition: 1
-  graphic: {fileID: 0}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1102631688}
-        m_MethodName: TurnOnOffInstr
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_IsOn: 0
---- !u!114 &815980288 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4585541052013400306, guid: 243a903b0fd3bca48a33407c5f1906aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4585541051751075826}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815980285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &940302516
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,33 +672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1102631681 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4585541052833783027, guid: 243a903b0fd3bca48a33407c5f1906aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4585541051751075826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1102631682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4585541052833783024, guid: 243a903b0fd3bca48a33407c5f1906aa,
     type: 3}
   m_PrefabInstance: {fileID: 4585541051751075826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1102631688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102631681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142264616f4b90b4095474c5a221ead9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onoff: {fileID: 815980287}
-  instrucciones: {fileID: 230749881}
-  video: {fileID: 330448131}
 --- !u!1 &1288513420
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,11 +817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inicio
       objectReference: {fileID: 0}
-    - target: {fileID: 3818751286592594076, guid: 2813c567a33433745946264f396f2ecd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3818751286592594077, guid: 2813c567a33433745946264f396f2ecd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1040,11 +932,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 940302516}
-    - target: {fileID: 3818751288642832768, guid: 2813c567a33433745946264f396f2ecd,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2813c567a33433745946264f396f2ecd, type: 3}
 --- !u!1001 &4010385565903318095
@@ -1169,16 +1056,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MailBienvenida
       objectReference: {fileID: 0}
-    - target: {fileID: 4010385567232152350, guid: 3dc6bc92b10fd324abe7c228d9d0cc55,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4010385567242719195, guid: 3dc6bc92b10fd324abe7c228d9d0cc55,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc6bc92b10fd324abe7c228d9d0cc55, type: 3}
 --- !u!1001 &4585541051751075826
@@ -1188,56 +1065,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 211362420}
     m_Modifications:
-    - target: {fileID: 4585541051830827336, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541051830827339, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541051830827339, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_Name
-      value: InstruccionsBanner
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541052013400306, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 940302517}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1102631688}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TurnOnOffInstr
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_Transition
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4585541052833783024, guid: 243a903b0fd3bca48a33407c5f1906aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1348,13 +1175,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Home
       objectReference: {fileID: 0}
-    - target: {fileID: 4585541052833783027, guid: 243a903b0fd3bca48a33407c5f1906aa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4585541052013400333, guid: 243a903b0fd3bca48a33407c5f1906aa, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 243a903b0fd3bca48a33407c5f1906aa, type: 3}
 --- !u!1001 &5640148946552402223
 PrefabInstance:
@@ -1478,11 +1299,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DisfrutaLapelicula
       objectReference: {fileID: 0}
-    - target: {fileID: 5640148947138291494, guid: ebf8e0525ac0efe4d8008c0d95e6784d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5640148947261423714, guid: ebf8e0525ac0efe4d8008c0d95e6784d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1531,11 +1347,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Registro
-      objectReference: {fileID: 0}
-    - target: {fileID: 8441646264999049746, guid: 7fa0d8f681890194d870aa8a5d670fd9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8441646264999049749, guid: 7fa0d8f681890194d870aa8a5d670fd9,
         type: 3}
