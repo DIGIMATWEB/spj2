@@ -141,7 +141,7 @@ public class UIManager : MonoBehaviour
         else
         {
             Debug.Log("Form upload complete!");
-            menu4.SetActive(true);
+            menu5.SetActive(true);
             menu2.SetActive(false);
             
             //   regiterScreen.DOAnchorPos(new Vector2(-1400, 0), 0.25f);
@@ -187,7 +187,7 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                menu4.SetActive(true);
+                menu5.SetActive(true);
                 menu1.SetActive(false);
             }
 
