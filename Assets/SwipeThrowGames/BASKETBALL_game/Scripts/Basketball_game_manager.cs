@@ -127,6 +127,13 @@ public class Basketball_game_manager : MonoBehaviour {
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void RestareScore0()
+    {
+        total_score =0; // Increase score
+        UpdateUIScore(); // Update UI
+        SpawnBall();
+
+    }
 
     public void GoHome() {
         SceneManager.LoadScene(main_munu_scene_index); // Load Main menu
