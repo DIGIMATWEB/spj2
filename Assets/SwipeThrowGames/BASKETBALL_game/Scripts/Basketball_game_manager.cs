@@ -39,6 +39,10 @@ public class Basketball_game_manager : MonoBehaviour {
     }
 
     void Start() {
+     
+    }
+    public void startthegame()
+    {
         // Initialization
         restart_button.SetActive(true); // Activate restart button
         home_button.SetActive(true); // Activate home button
@@ -48,15 +52,17 @@ public class Basketball_game_manager : MonoBehaviour {
         ui_level_name.enabled = true; // Enable level name
         SwitchHoop(); // Generate random hoop
         UpdateUIScore(); // Update UI
-        if (game_type == GAME_TYPE.TIME_TRIAL) {
+        if (game_type == GAME_TYPE.TIME_TRIAL)
+        {
             UpdateUITime(); // Only if TIME_TRIAL we need to update time
             StartCoroutine("TimeCalc"); // Only if TIME_TRIAL we need to calculate time
-        } else {
+        }
+        else
+        {
             ui_time_counter.enabled = false; // If not TIME_TRIAL disable time
         }
         SpawnBall(); // After all initialization done - spawn ball
     }
-
     public void AddScore(int value) {
         total_score += value; // Increase score
         UpdateUIScore(); // Update UI

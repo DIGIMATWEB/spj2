@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Home")]
     public Toggle onoff;
+    public GameObject Background;
     public GameObject VideoPlayer1;
     public GameObject Instrucciones;
     public GameObject practica;
@@ -248,6 +249,16 @@ public class UIManager : MonoBehaviour
         VideoPlayer1.SetActive(false);
         topPlayers.SetActive(true);
     }
+    public void practiceInGame()
+    {
+        Instrucciones.SetActive(false);
+        Background.SetActive(false);
+        VideoPlayer1.GetComponentInChildren<VideoPlayer>().Stop();
+        VideoPlayer1.SetActive(false);
+        practica.SetActive(true);
 
-  
+    }
+
+
+
 }
