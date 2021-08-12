@@ -259,6 +259,15 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void returnHomefromPractice()
+    {
+        practica.SetActive(false);
+        Background.SetActive(true);
+        Instrucciones.SetActive(false);
+        VideoPlayer1.SetActive(true);
+        VideoPlayer1.GetComponentInChildren<VideoPlayer>().Play();
+        isOn = true;
+    }
 
 
 }
