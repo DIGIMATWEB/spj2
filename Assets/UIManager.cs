@@ -55,7 +55,8 @@ public class UIManager : MonoBehaviour
     //public GameObject DisfrutaLaPelicula;
 
     // public GameObject instructionsBanner;
-
+    [Header("AudioSource")]
+    public GameObject audioSource;
     private string dbname, dbapellido, dbpais, dbemail, dbcontraseña, dbterminos,dbUsr,dbPass;
     private bool isOn;
 
@@ -268,6 +269,15 @@ public class UIManager : MonoBehaviour
         VideoPlayer1.GetComponentInChildren<VideoPlayer>().Play();
         isOn = true;
     }
+      public void showAudioSource()
+    {
+        audioSource.SetActive(true);
 
+    }
+    public void hideAudioSource()
+    {
+        audioSource.SetActive(false);
+
+    }
 
 }
